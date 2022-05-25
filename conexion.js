@@ -1,4 +1,5 @@
 const boton = document.querySelector(".boton");
+const imgpeli = document.querySelector(".poster");
 
 boton.addEventListener("click", () => {
   cargarPeliculas();
@@ -25,9 +26,6 @@ const cargarPeliculas = async () => {
 				`;
       });
       document.getElementById("contenedor").innerHTML = peliculas;
-      document.getElementById("contenedorsecundario").innerHTML = peliculas;
-      document.getElementById("contenedortercero").innerHTML = peliculas;
-      document.getElementById("contenedorcuarto").innerHTML = peliculas;
     } else if (respuesta.status === 401) {
       console.log("Pusiste la llave mal");
     } else if (respuesta.status === 404) {
@@ -63,8 +61,6 @@ const cargarPeliSegundas = async () => {
       });
 
       document.getElementById("contenedorsecundario").innerHTML = peliculas;
-      document.getElementById("contenedortercero").innerHTML = peliculas;
-      document.getElementById("contenedorcuarto").innerHTML = peliculas;
     } else if (respuesta.status === 401) {
       console.log("Pusiste la llave mal");
     } else if (respuesta.status === 404) {
@@ -99,7 +95,6 @@ const cargarPeliTerceras = async () => {
 				`;
       });
       document.getElementById("contenedortercero").innerHTML = peliculas;
-      document.getElementById("contenedorcuarto").innerHTML = peliculas;
     } else if (respuesta.status === 401) {
       console.log("Pusiste la llave mal");
     } else if (respuesta.status === 404) {
@@ -116,7 +111,7 @@ cargarPeliTerceras();
 const cargarPeliCuartas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=4`
+      `https://api.themoviedb.org/3/tv/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=1`
     );
 
     console.log(respuesta);
@@ -129,7 +124,7 @@ const cargarPeliCuartas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula" >
-					  <a href="#"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					  <a href="peli.html"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });
@@ -147,3 +142,5 @@ const cargarPeliCuartas = async () => {
   }
 };
 cargarPeliCuartas();
+
+imgpeli.addEventListener("click", () => {});
