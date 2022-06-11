@@ -8,10 +8,8 @@ boton.addEventListener("click", () => {
 const cargarPeliculas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX&page=1`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=192e0b9821564f26f52949758ea3c473&page=1`
     );
-
-    console.log(respuesta);
 
     // Si la respuesta es correcta
     if (respuesta.status === 200) {
@@ -42,7 +40,7 @@ cargarPeliculas();
 const cargarPeliSegundas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX&page=2`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=192e0b9821564f26f52949758ea3c473&page=1`
     );
 
     console.log(respuesta);
@@ -77,7 +75,7 @@ cargarPeliSegundas();
 const cargarPeliTerceras = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es-MX&page=3`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=192e0b9821564f26f52949758ea3c473&language=en-US&page=1`
     );
 
     console.log(respuesta);
@@ -111,7 +109,7 @@ cargarPeliTerceras();
 const cargarPeliCuartas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=1`
+      `https://api.themoviedb.org/3/tv/popular?api_key=192e0b9821564f26f52949758ea3c473`
     );
 
     console.log(respuesta);

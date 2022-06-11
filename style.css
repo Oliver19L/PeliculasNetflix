@@ -192,7 +192,7 @@ header nav a.activo {
 }
 
 .poster:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   transform-origin: center;
 }
 
