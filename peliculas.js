@@ -15,7 +15,7 @@ const cargarPeliculas = async (urls) => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula">
-					  <a href="https://www.themoviedb.org/movie/${pelicula.id}-${pelicula.title}">  	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					  <a href="unipeli.html?id=${pelicula.id}" class="i">  	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });
@@ -32,12 +32,12 @@ const cargarPeliculas = async (urls) => {
   }
 };
 cargarPeliculas(`
-https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=en-US&page=${contador}`);
+https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=${contador}`);
 
 moreder.addEventListener("click", () => {
   contador++;
   let url = `
-https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=en-US&page=${contador}`;
+https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=${contador}`;
   cargarPeliculas(url);
   console.log(contador);
 });
@@ -47,7 +47,7 @@ moreizq.addEventListener("click", () => {
     console.log(contador);
     contador--;
     let url = `
-https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=en-US&page=${contador}`;
+https://api.themoviedb.org/3/movie/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=${contador}`;
     cargarPeliculas(url);
   }
 });

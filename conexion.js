@@ -8,7 +8,7 @@ boton.addEventListener("click", () => {
 const cargarPeliculas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/upcoming?api_key=192e0b9821564f26f52949758ea3c473&page=1`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=1`
     );
 
     // Si la respuesta es correcta
@@ -19,7 +19,7 @@ const cargarPeliculas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula">
-					  <a href="#"></a>	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					 	  <a href="unipeli.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });
@@ -40,7 +40,7 @@ cargarPeliculas();
 const cargarPeliSegundas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=192e0b9821564f26f52949758ea3c473&page=1`
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=1`
     );
 
     console.log(respuesta);
@@ -53,7 +53,7 @@ const cargarPeliSegundas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula">
-					  <a href="#"></a>	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					  <a href="unipeli.html?id=${pelicula.id}">	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });
@@ -75,7 +75,7 @@ cargarPeliSegundas();
 const cargarPeliTerceras = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/movie/top_rated?api_key=192e0b9821564f26f52949758ea3c473&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=192e0b9821564f26f52949758ea3c473&language=es&page=1`
     );
 
     console.log(respuesta);
@@ -88,7 +88,7 @@ const cargarPeliTerceras = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula">
-					  <a href="#"></a>	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					  <a href="unipeli.html?id=${pelicula.id}">	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });
@@ -109,7 +109,7 @@ cargarPeliTerceras();
 const cargarPeliCuartas = async () => {
   try {
     const respuesta = await fetch(
-      `https://api.themoviedb.org/3/tv/popular?api_key=192e0b9821564f26f52949758ea3c473`
+      `https://api.themoviedb.org/3/tv/popular?api_key=192e0b9821564f26f52949758ea3c473&language=es`
     );
 
     console.log(respuesta);
@@ -122,7 +122,7 @@ const cargarPeliCuartas = async () => {
       datos.results.forEach((pelicula) => {
         peliculas += `
 					<div class="pelicula" >
-					  <a href="peli.html"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
+					  <a href="uniseries.html?id=${pelicula.id}"><img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"></a>
 					</div>
 				`;
       });

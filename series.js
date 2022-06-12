@@ -16,7 +16,7 @@ const cargarPeliculas = async (urls) => {
         console.log(pelicula);
         peliculas += `
 					<div class="pelicula">
-					  <a href="unipeli.html?id=${pelicula.id}"> 
+					  <a href="uniseries.html?id=${pelicula.id}"> 
             	<img class="poster" src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}"  ></a>
 					</div>
 				`;
