@@ -36,6 +36,7 @@ header .logotipo {
 }
 header nav {
   width: 40%;
+  margin-right: 150px;
 }
 
 header nav a {
@@ -62,6 +63,17 @@ input[type="text"] {
 input[type="text"]:focus {
   border-color: dodgerBlue;
   box-shadow: 0 0 8px 0 dodgerBlue;
+}
+
+.login {
+  position: absolute;
+  inset-inline-end: 40px;
+  padding: 10px;
+  background-color: #fff;
+
+  text-decoration: none;
+  color: #000;
+  border-radius: 6px;
 }
 
 /* ---- ----- ----- Pelicula Principal ----- ----- ----- */
